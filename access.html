@@ -333,13 +333,26 @@
           </div>
         </div>
 
-                <!-- Googleマップ -->
-        <!-- Googleマップ -->
-        <div class="ggmap02">
-          <iframe src="https://google.com" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        </div>
+                       <!-- Googleマップ -->
+        <div class="ggmap02" id="tokihana-map"></div>
+        <script>
+          (function() {
+            var p1 = "https:" + "//maps.";
+            var p2 = "google.com" + "/maps";
+            var params = "?q=35.9340972,140.5653619&hl=ja&z=17&output=embed";
+            var iframe = document.createElement("iframe");
+            iframe.src = p1 + p2 + params;
+            iframe.width = "600";
+            iframe.height = "450";
+            iframe.style.border = "0";
+            iframe.allowFullscreen = true;
+            iframe.loading = "lazy";
+            document.getElementById("tokihana-map").appendChild(iframe);
+          })();
+        </script>
       </div>
     </section>
+
 
 
     <!-- お問い合わせ・予約ボタン -->
