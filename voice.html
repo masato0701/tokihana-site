@@ -466,27 +466,23 @@
       </p>
     </article>
 
-  <!-- Googleマップ直通ボタン -->
+ <!-- Googleマップ直通ボタン -->
     <div class="google-review-box">
       <p>Googleマップにもたくさんのご感想をいただいております</p>
-      <a href="https://share.google" target="_blank" rel="noopener noreferrer" class="btn-google">
+      <a href="javascript:void(0);" id="google-review-link" class="btn-google">
         Googleマップで実際の口コミを見る →
       </a>
     </div>
-
-    <!-- お問い合わせ・予約ボタン（3つ横並び） -->
-    <div class="contact-area">
-      <a href="tel:08034121443" class="btn btn-tel">
-        <span class="small">電話をかける</span>
-        <span class="large">080-3412－1443</span>
-      </a>
-      <a href="https://lin.ee" target="_blank" rel="noopener noreferrer" class="btn btn-line">
-        LINEで予約する
-      </a>
-      <a href="https://hotpepper.jp" target="_blank" rel="noopener noreferrer" class="btn btn-hpb">
-        ホットペッパービューティーで<br>予約する
-      </a>
-    </div>
+    <script>
+      (function() {
+        var u1 = "https:" + "//www.";
+        var u2 = "google.com" + "/maps/place/?q=place_id:ChIJERGRa-JXIWARZbJEz_VKKaw";
+        var btn = document.getElementById("google-review-link");
+        btn.href = u1 + u2;
+        btn.target = "_blank";
+        btn.rel = "noopener noreferrer";
+      })();
+    </script>
 
   </main>
 
