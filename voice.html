@@ -78,11 +78,11 @@
       padding: 0 20px;
     }
 
-    /* 導入リード文 */
+    /* 導入リード文＆口コミ記入ボタン枠 */
     .lead-box {
       background-color: #ffffff;
       border-radius: 8px;
-      padding: 22px 26px;
+      padding: 24px 26px;
       margin-bottom: 25px;
       font-size: 0.95rem;
       text-align: center;
@@ -93,6 +93,26 @@
       font-size: 0.82rem;
       color: #666666;
       margin-top: 6px;
+    }
+    .review-write-area {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px dashed #dddddd;
+    }
+    .btn-write-review {
+      display: inline-block;
+      background-color: #4f7963;
+      color: #ffffff;
+      font-weight: bold;
+      padding: 10px 26px;
+      border-radius: 50px;
+      font-size: 0.92rem;
+      box-shadow: 0 3px 8px rgba(79, 121, 99, 0.25);
+      transition: opacity 0.2s, transform 0.2s;
+    }
+    .btn-write-review:hover {
+      opacity: 0.88;
+      transform: translateY(-1px);
     }
 
     /* お客様の声カード */
@@ -160,7 +180,7 @@
       line-height: 1.8;
     }
 
-    /* Google口コミリンクエリア */
+    /* 下部のGoogle口コミリンクエリア */
     .google-review-box {
       background-color: #ffffff;
       border-radius: 8px;
@@ -286,9 +306,15 @@
   <!-- メインコンテンツ -->
   <main>
 
+    <!-- 導入リード文＆Google口コミ投稿ボタン -->
     <div class="lead-box">
       当院をご利用いただいたお客様から寄せられた実際のご感想をご紹介いたします。
       <span class="lead-note">※ホットペッパービューティーやGoogleマップ等に寄せられた口コミをもとに掲載しております。</span>
+      <div class="review-write-area">
+        <a href="https://g.page/r/CWWyRM_1SimsEAE/review" target="_blank" rel="noopener noreferrer" class="btn-write-review">
+          ★ Googleで感想を投稿する
+        </a>
+      </div>
     </div>
 
     <!-- 1件目：2026/11/23 Cinnamon さん -->
@@ -354,7 +380,7 @@
       </p>
     </article>
 
-    <!-- 5件目：2026/09/30 ぴー さん -->
+       <!-- 5件目：2026/09/30 ぴー さん -->
     <article class="voice-card">
       <div class="voice-header">
         <div class="voice-user">ぴー さん<span>（女性 / 30代後半）</span></div>
@@ -466,25 +492,30 @@
       </p>
     </article>
 
- <!-- Googleマップ直通ボタン -->
+    <!-- Googleマップ直通ボタン -->
     <div class="google-review-box">
       <p>Googleマップにもたくさんのご感想をいただいております</p>
-      <a href="javascript:void(0);" id="google-review-link" class="btn-google">
-        Googleマップで実際の口コミを見る →
+      <a href="https://g.page" target="_blank" rel="noopener noreferrer" class="btn-google">
+        Googleマップで口コミを見る・投稿する →
       </a>
     </div>
-    <script>
-      (function() {
-        var u1 = "https:" + "//www.";
-        var u2 = "google.com" + "/maps/place/?q=place_id:ChIJERGRa-JXIWARZbJEz_VKKaw";
-        var btn = document.getElementById("google-review-link");
-        btn.href = u1 + u2;
-        btn.target = "_blank";
-        btn.rel = "noopener noreferrer";
-      })();
-    </script>
+
+    <!-- お問い合わせ・予約ボタン（3つ横並び） -->
+    <div class="contact-area">
+      <a href="tel:08034121443" class="btn btn-tel">
+        <span class="small">電話をかける</span>
+        <span class="large">080-3412－1443</span>
+      </a>
+      <a href="https://lin.ee" target="_blank" rel="noopener noreferrer" class="btn btn-line">
+        LINEで予約する
+      </a>
+      <a href="https://hotpepper.jp" target="_blank" rel="noopener noreferrer" class="btn btn-hpb">
+        ホットペッパービューティーで<br>予約する
+      </a>
+    </div>
 
   </main>
 
 </body>
-</html>   
+</html>
+
