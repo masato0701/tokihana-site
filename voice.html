@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>お客様の声 | つなぐ鍼灸 トキハナ</title>
+  <style>
+    /* ベーススタイル（他ページと完全統一） */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+      background-color: #f4f5f4;
+      color: #333333;
+      line-height: 1.8;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ヘッダー */
+    header {
+      background-color: #ffffff;
+      border-bottom: 1px solid #e0e0e0;
+      padding: 15px 20px;
+    }
+    .header-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .logo {
+      font-size: 1.25rem;
+      font-weight: bold;
+      color: #2c3e35;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      font-size: 0.95rem;
+      flex-wrap: wrap;
+    }
+    nav a:hover {
+      color: #4f7963;
+    }
+
+    /* ページタイトルバナー */
+    .page-banner {
+      background-color: #4f7963;
+      color: #ffffff;
+      text-align: center;
+      padding: 35px 20px;
+    }
+    .page-banner h1 {
+      font-size: 1.75rem;
+      letter-spacing: 0.05em;
+      margin-bottom: 5px;
+    }
+    .page-banner p {
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      opacity: 0.9;
+    }
+
+    /* メインコンテンツ */
+    main {
+      max-width: 820px;
+      margin: 30px auto 60px;
+      padding: 0 20px;
+    }
+
+    /* 導入リード文 */
+    .lead-box {
+      background-color: #ffffff;
+      border-radius: 8px;
+      padding: 22px 26px;
+      margin-bottom: 25px;
+      font-size: 0.95rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+    .lead-note {
+      display: block;
+      font-size: 0.82rem;
+      color: #666666;
+      margin-top: 6px;
+    }
+
+    /* お客様の声カード */
+    .voice-card {
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      padding: 26px 30px;
+      margin-bottom: 20px;
+      border-left: 5px solid #4f7963;
+    }
+    .voice-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+    .voice-user {
+      font-weight: bold;
+      color: #2c3e35;
+      font-size: 0.95rem;
+    }
+    .voice-user span {
+      font-weight: normal;
+      color: #666666;
+      font-size: 0.88rem;
+      margin-left: 6px;
+    }
+    .voice-tag {
+      background-color: #e8f0ec;
+      color: #4f7963;
+      font-size: 0.8rem;
+      font-weight: bold;
+      padding: 3px 10px;
+      border-radius: 4px;
+    }
+    .voice-rating-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .voice-stars {
+      color: #f5a623;
+      font-size: 1.05rem;
+      letter-spacing: 0.06em;
+      font-weight: bold;
+    }
+    .voice-stars span {
+      color: #333333;
+      font-size: 0.9rem;
+      margin-right: 4px;
+    }
+    .voice-date {
+      font-size: 0.82rem;
+      color: #777777;
+    }
+    .voice-body {
+      font-size: 0.95rem;
+      color: #333333;
+      line-height: 1.8;
+    }
+
+    /* Google口コミリンクエリア */
+    .google-review-box {
+      background-color: #ffffff;
+      border-radius: 8px;
+      padding: 26px;
+      text-align: center;
+      margin-top: 30px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+    .google-review-box p {
+      font-size: 0.96rem;
+      margin-bottom: 16px;
+      font-weight: bold;
+      color: #2c3e35;
+    }
+    .btn-google {
+      display: inline-block;
+      background-color: #ffffff;
+      color: #2c3e35;
+      border: 2px solid #4f7963;
+      font-weight: bold;
+      padding: 12px 30px;
+      border-radius: 50px;
+      font-size: 0.95rem;
+      transition: background-color 0.2s, color 0.2s;
+    }
+    .btn-google:hover {
+      background-color: #4f7963;
+      color: #ffffff;
+    }
+
+    /* CTAボタンエリア（3つ横並び対応） */
+    .contact-area {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 35px;
+      flex-wrap: nowrap;
+    }
+    .btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+      min-height: 68px;
+      padding: 12px 10px;
+      border-radius: 50px;
+      color: #ffffff;
+      font-weight: bold;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: opacity 0.2s, transform 0.2s;
+    }
+    .btn:hover {
+      opacity: 0.88;
+      transform: translateY(-2px);
+    }
+    .btn-tel {
+      background-color: #5b7869;
+    }
+    .btn-tel span.small {
+      font-size: 0.75rem;
+      font-weight: normal;
+      line-height: 1.2;
+    }
+    .btn-tel span.large {
+      font-size: 1.12rem;
+      letter-spacing: 0.02em;
+      margin-top: 2px;
+    }
+    .btn-line {
+      background-color: #06c755;
+      font-size: 0.98rem;
+    }
+    .btn-hpb {
+      background-color: #d94b70;
+      font-size: 0.86rem;
+      line-height: 1.35;
+    }
+
+    /* スマホ対応 */
+    @media (max-width: 768px) {
+      .voice-card {
+        padding: 22px 18px;
+      }
+      .contact-area {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .btn {
+        flex: none;
+        width: 100%;
+        max-width: 340px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ヘッダー -->
+  <header>
+    <div class="header-inner">
+      <a href="javascript:void(0);" class="logo">つなぐ鍼灸 トキハナ</a>
+      <nav>
+        <ul>
+          <li><a href="javascript:void(0);">ホーム</a></li>
+          <li><a href="javascript:void(0);">初めての方へ</a></li>
+          <li><a href="javascript:void(0);">施術メニュー</a></li>
+          <li><a href="voice.html" style="color: #4f7963; font-weight: bold;">お客様の声</a></li>
+          <li><a href="blog.html">ブログ</a></li>
+          <li><a href="access.html">アクセス</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- バナー -->
+  <div class="page-banner">
+    <h1>お客様の声</h1>
+    <p>VOICE &amp; REVIEWS</p>
+  </div>
+
+  <!-- メインコンテンツ -->
+  <main>
+
+    <div class="lead-box">
+      当院をご利用いただいたお客様から寄せられた実際のご感想をご紹介いたします。
+      <span class="lead-note">※ホットペッパービューティーやGoogleマップ等に寄せられた口コミをもとに掲載しております。</span>
+    </div>
+
+    <!-- 1件目：2026/11/23 Cinnamon さん -->
+    <article class="voice-card">
+      <div class="voice-header">
+        <div class="voice-user">Cinnamon さん<span>（女性 / 30代前半 / 主婦）</span></div>
+        <span class="voice-tag">鍼灸＋もみほぐし60分</span>
+      </div>
+      <div class="voice-rating-row">
+        <div class="voice-stars"><span>総合 5</span>★★★★★</div>
+        <span class="voice-date">投稿日：2026/11/23</span>
+      </div>
+      <p class="voice-body">
+        鍼や灸を受けるのは初めてでしたが、都度確認もあり安心してお任せできました。<br>
+        当日からも辛かった肩や腕が楽になったのを実感できました。<br>
+        ありがとうございました。またぜひお願いしたいです。
+      </p>
+    </article>
+
+    <!-- 2件目：2026/11/11 さっちゃん さん -->
+    <article class="voice-card">
+      <div class="voice-header">
+        <div class="voice-user">さっちゃん さん<span>（女性 / 50代 / パート・アルバイト）</span></div>
+        <span class="voice-tag">鍼灸＋もみほぐし60分</span>
+      </div>
+      <div class="voice-rating-row">
+        <div class="voice-stars"><span>総合 4</span>★★★★☆</div>
+        <span class="voice-date">投稿日：2026/11/11</span>
+      </div>
+      <p class="voice-body">
+        初めての施術でした。カウンセリングは丁寧に細かく聞いて下さりました。自分の体の不調を知る事が出来ました。<br>
+        肩首の凝りから頭のモヤモヤが1番気になる所でしたが、施術後2日経つ頃にはスッキリした感じになりました。
+      </p>
+    </article>
+
+    <!-- 3件目：2026/10/19 キキ さん -->
+    <article class="voice-card">
+      <div class="voice-header">
+        <div class="voice-user">キキ さん<span>（女性 / 20代後半 / 会社員）</span></div>
+        <span class="voice-tag">鍼灸＋もみほぐし60分</span>
+      </div>
+      <div class="voice-rating-row">
+        <div class="voice-stars"><span>総合 5</span>★★★★★</div>
+        <span class="voice-date">投稿日：2026/10/19</span>
+      </div>
+      <p class="voice-body">
+        久しぶりに鍼治療をしましたが、カウンセリングを丁寧にして下さり不安なく鍼治療を受けることができました。ありがとうございました！
+      </p>
+    </article>
+
+    <!-- 4件目：2026/10/18 tik さん -->
+    <article class="voice-card">
+      <div class="voice-header">
+        <div class="voice-user">tik さん<span>（女性 / 30代前半）</span></div>
+        <span class="voice-tag">鍼灸＋もみほぐし60分</span>
+      </div>
+      <div class="voice-rating-row">
+        <div class="voice-stars"><span>総合 5</span>★★★★★</div>
+        <span class="voice-date">投稿日：2026/10/18</span>
+      </div>
+      <p class="voice-body">
+        自分が思っている以上に疲労が溜まっていたようで、施術後の身体の軽さはもちろん、翌朝すっきり起きられました。首の痛みもすっかりよくなったのでまたお願いします。
+      </p>
+    </article>
+
+    <!-- 5件目：2026/09/30 ぴー さん -->
+    <article class="voice-card">
+      <div class="voice-header">
+        <div class="voice-user">ぴー さん<span>（女性 / 30代後半）</span></div>
+        <span class="voice-tag">施術メニュー</span>
+      </div>
+      <div class="voice-rating-row">
+        <div class="voice-stars"><span>総合 4</span>★★★★☆</div>
+        <span class="voice-date">投稿日：2026/09/30</span>
+      </div>
+      <p class="voice-body">
+        いつもお世話になっています。<br>
+        とても丁寧にカウンセリングしながらの施術で、安心して受けられます。<br>
+        病院に通院して服薬していましたが、こちらで施術していただいてからは常服しないでも大丈夫になりました。
+      </p>
+    </article>
+
+    <!-- 6件目：2026/09/28 ひろと さん -->
+    <article class="voice-card">
+      <div class="voice-header">
+        <div class="voice-user">ひろと さん<span>（男性 / 20代後半）</span></div>
+        <span class="voice-tag">鍼灸＋もみほぐし90分</span>
+      </div>
+      <div class="voice-rating-row">
+        <div class="voice-stars"><span>総合 5</span>★★★★★</div>
+        <span class="voice-date">投稿日：2026/09/28</span>
+      </div>
+      <p class="voice-body">
+        鍼灸は初めてでしたが、カウンセリングを十分に実施いただいたことで、不安なく施術していただきました。<br>
+        私の感じていた不調だけではなく、気がつけなかった不調も合わせて施術いただき大変満足しています。
+      </p>
+    </article>
+
+    <!-- 7件目：2026/09/23 りーご さん -->
+    <article class="voice-card">
+      <div class="voice-header">
+        <div class="voice-user">りーご さん<span>（女性 / 30代前半 / パート・アルバイト）</span></div>
+        <span class="voice-tag">鍼灸＋もみほぐし60分</span>
+      </div>
+      <div class="voice-rating-row">
+        <div class="voice-stars"><span>総合 5</span>★★★★★</div>
+        <span class="voice-date">投稿日：2026/09/23</span>
+      </div>
+      <p class="voice-body">
+        身体の状態をよく診ていただき、今の自分の状態を知ることができました。<br>
+        首、背中の張りもなくなり血の巡りも実感して体も暖かくなりました。<br>
+        不要な物を手放していくお話しも、なるほど！！と思いました。<br>
+        心も体もほぐれました♪<br>
+        ありがとうございました！
+      </p>
+    </article>
+
+    <!-- 8件目：2026/09/09 そら さん -->
+    <article class="voice-card">
+      <div class="voice-header">
+        <div class="voice-user">そら さん<span>（女性 / 50代 / 自営業）</span></div>
+        <span class="voice-tag">首肩＋腰改善コース もみほぐし90分</span>
+      </div>
+      <div class="voice-rating-row">
+        <div class="voice-stars"><span>総合 5</span>★★★★★</div>
+        <span class="voice-date">投稿日：2026/09/09</span>
+      </div>
+      <p class="voice-body">
+        いつもお世話になってます！<br>
+        私はヘバーデン結節で神経痛のような痛みがあり、最近は指だけではなく、腕や肩も痛いので、痛い時はかなり辛いです。<br><br>
+        繋ぐ鍼灸トキハナさんでは、痛みがある部位だけではなく、痛みのもとを見つけ出して施術してくれるので、ピリピリと痛む手や指なども、一回の施術でかなり改善されます！<br><br>
+        ヘバーデン結節やプシャール結節で神経痛のような痛みでお悩みの方にはかなりおすすめだと思います！<br><br>
+        引き続き、宜しくお願いします！
+      </p>
+    </article>
+
+    <!-- 9件目：2026/09/03 しょう さん -->
+    <article class="voice-card">
+      <div class="voice-header">
+        <div class="voice-user">しょう さん<span>（男性 / 50代 / 自営業）</span></div>
+        <span class="voice-tag">首肩＋腰改善コース もみほぐし90分</span>
+      </div>
+      <div class="voice-rating-row">
+        <div class="voice-stars"><span>総合 5</span>★★★★★</div>
+        <span class="voice-date">投稿日：2026/09/03</span>
+      </div>
+      <p class="voice-body">
+        以前何度か利用させて頂いておりました。<br>
+        身体が疲労で限界だった為久しぶりに施術して頂きました。<br>
+        いつもツボを外す事なく終わった後にもの足りなさを感じる事がなく素晴らしいと思います。<br>
+        ハズレがないのでお勧めです。<br>
+        ありがとうございました。
+      </p>
+    </article>
+
+    <!-- 10件目：2026/09/01 ひろ さん -->
+    <article class="voice-card">
+      <div class="voice-header">
+        <div class="voice-user">ひろ さん<span>（女性 / 50代 / 会社員）</span></div>
+        <span class="voice-tag">首肩＋腰改善コース もみほぐし90分</span>
+      </div>
+      <div class="voice-rating-row">
+        <div class="voice-stars"><span>総合 5</span>★★★★★</div>
+        <span class="voice-date">投稿日：2026/09/01</span>
+      </div>
+      <p class="voice-body">
+        はじめて施術を受けさせていただきました。<br>
+        仕事が終わっていけるので。<br>
+        とにかく、身体が限界に近くなってきていたので。<br>
+        はじめてでしたので、いろいろ話を聞いていただき、今の身体にあった、施術をしていただきました。<br>
+        首、肩まわりは、じっくり芯まで届いていて、とても丁寧にしていただきました。<br>
+        自分が考えていた以上に、身体は、悲鳴をあげていたみたいです。<br>
+        とにかくよかったです。<br>
+        また伺います。
+      </p>
+    </article>
+
+  <!-- Googleマップ直通ボタン -->
+    <div class="google-review-box">
+      <p>Googleマップにもたくさんのご感想をいただいております</p>
+      <a href="https://share.google" target="_blank" rel="noopener noreferrer" class="btn-google">
+        Googleマップで実際の口コミを見る →
+      </a>
+    </div>
+
+    <!-- お問い合わせ・予約ボタン（3つ横並び） -->
+    <div class="contact-area">
+      <a href="tel:08034121443" class="btn btn-tel">
+        <span class="small">電話をかける</span>
+        <span class="large">080-3412－1443</span>
+      </a>
+      <a href="https://lin.ee" target="_blank" rel="noopener noreferrer" class="btn btn-line">
+        LINEで予約する
+      </a>
+      <a href="https://hotpepper.jp" target="_blank" rel="noopener noreferrer" class="btn btn-hpb">
+        ホットペッパービューティーで<br>予約する
+      </a>
+    </div>
+
+  </main>
+
+</body>
+</html>   
