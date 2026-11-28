@@ -1,1 +1,156 @@
 
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>メニュー・料金｜つなぐ鍼灸 トキハナ（茨城県潮来市）</title>
+  <meta name="description" content="つなぐ鍼灸 トキハナの施術メニュー・料金一覧です。初めての方におすすめの鍼灸＋もみほぐし（60分・90分）や育毛鍼など、お悩みに合わせたコースをご案内します。">
+  <link rel="preconnect" href="https://googleapis.com">
+  <link rel="preconnect" href="https://gstatic.com" crossorigin>
+  <link href="https://googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Noto+Serif+JP:wght@500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg: #f4f1ea; --card: #ffffff; --main: #4f5d4e; --accent: #a68b67; --text: #2f2d2a; --sub: #6e6a63; --border: #e2ddd3; --hover: #faf8f4; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Zen Kaku Gothic New', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; letter-spacing: 0.04em; }
+    .hero-image { width: 100%; max-height: 360px; overflow: hidden; background: #e5dfd5; }
+    .hero-image img { width: 100%; height: 360px; object-fit: cover; display: block; }
+    .container { max-width: 1060px; margin: 0 auto; padding: 55px 20px 80px; }
+    .page-title { text-align: center; margin-bottom: 42px; }
+    .page-title .en { display: block; font-family: 'Cormorant Garamond', serif; font-size: 2.7rem; font-weight: 600; color: var(--main); letter-spacing: 0.14em; line-height: 1.1; }
+    .page-title .ja-wrap { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 8px; }
+    .page-title .ja-line { width: 48px; height: 1px; background: #c9bfb0; position: relative; }
+    .page-title .ja-line::after { content: ""; display: block; width: 100%; height: 1px; background: #dcd5c9; margin-top: 2px; }
+    .page-title .ja { font-family: 'Noto Serif JP', serif; font-size: 1.15rem; font-weight: 500; color: var(--main); }
+    .layout-wrapper { display: flex; justify-content: center; align-items: flex-start; gap: 32px; }
+    .price-column { width: 100%; max-width: 580px; }
+    .first-time-box { background: var(--card); border: 2px solid var(--accent); border-radius: 14px; padding: 26px 28px 20px; margin-bottom: 24px; position: relative; box-shadow: 0 6px 20px rgba(0,0,0,0.04); cursor: pointer; transition: 0.2s; }
+    .first-time-box:hover, .first-time-box.active { background: var(--hover); }
+    .first-time-badge { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--accent); color: #fff; font-size: 0.85rem; font-weight: 500; padding: 4px 22px; border-radius: 20px; white-space: nowrap; }
+    .first-time-content { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+    .first-time-info h2 { font-size: 1.45rem; font-weight: 700; margin-bottom: 2px; }
+    .first-time-info .time { font-size: 0.92rem; font-weight: 500; }
+    .price-tag { font-size: 2.15rem; font-weight: 700; color: var(--accent); white-space: nowrap; line-height: 1; }
+    .price-tag span { font-size: 1.05rem; font-weight: 500; margin-left: 2px; }
+    .first-time-note { font-size: 0.78rem; margin-top: 12px; padding-top: 10px; border-top: 1px solid #eeeae2; text-align: center; }
+    .course-section { background: var(--card); border-radius: 14px; padding: 22px 28px; margin-bottom: 18px; box-shadow: 0 6px 20px rgba(0,0,0,0.04); display: flex; align-items: center; gap: 24px; }
+    .course-title { font-size: 1.25rem; font-weight: 700; white-space: nowrap; min-width: 115px; text-align: center; }
+    .menu-list { list-style: none; flex: 1; }
+    .menu-item { display: flex; align-items: center; padding: 7px 10px; margin: 2px 0; border-radius: 8px; cursor: pointer; transition: 0.2s; border: 1px solid transparent; }
+    .menu-item:hover { background: var(--hover); }
+    .menu-item.active { background: var(--hover); border-color: var(--accent); }
+    .menu-name { font-size: 1.02rem; font-weight: 500; white-space: nowrap; }
+    .menu-line { flex: 1; height: 1px; background: #b8b2a6; margin: 0 14px; }
+    .menu-price { font-size: 1.08rem; font-weight: 700; white-space: nowrap; }
+    .menu-price span { font-size: 0.9rem; font-weight: 500; margin-left: 1px; }
+    .click-guide { text-align: center; font-size: 0.82rem; color: var(--sub); margin-top: 6px; }
+    .detail-column { display: none; width: 100%; max-width: 420px; position: sticky; top: 24px; }
+    .layout-wrapper.has-detail .detail-column { display: block; animation: slideIn 0.3s ease; }
+    @keyframes slideIn { from { opacity: 0; transform: translateX(12px); } to { opacity: 1; transform: translateX(0); } }
+    .detail-card { display: none; background: var(--card); border-radius: 14px; padding: 28px 26px; box-shadow: 0 8px 26px rgba(0,0,0,0.06); border: 1px solid var(--border); position: relative; }
+    .detail-card.active { display: block; }
+    .close-btn { position: absolute; top: 16px; right: 18px; background: none; border: none; font-size: 0.85rem; color: var(--sub); cursor: pointer; padding: 4px 8px; border-radius: 6px; }
+    .close-btn:hover { background: var(--bg); color: var(--text); }
+    .detail-tag { display: inline-block; background: var(--main); color: #fff; font-size: 0.76rem; padding: 3px 12px; border-radius: 12px; margin-bottom: 10px; }
+    .detail-card h3 { font-family: 'Noto Serif JP', serif; font-size: 1.28rem; margin-bottom: 4px; }
+    .detail-sub { font-size: 0.95rem; font-weight: 700; color: var(--accent); padding-bottom: 14px; margin-bottom: 16px; border-bottom: 1px solid var(--border); }
+    .detail-desc { font-size: 0.95rem; line-height: 1.85; }
+    .detail-recommend { margin-top: 18px; padding: 14px 16px; background: var(--bg); border-radius: 10px; font-size: 0.86rem; color: var(--sub); line-height: 1.75; }
+    .detail-recommend strong { display: block; color: var(--main); margin-bottom: 4px; }
+    .back-nav { text-align: center; margin-top: 38px; }
+    .back-btn { display: inline-block; padding: 13px 54px; background: var(--main); color: #fff; text-decoration: none; border-radius: 30px; font-size: 0.95rem; font-weight: 500; letter-spacing: 0.08em; box-shadow: 0 4px 12px rgba(79,93,78,0.25); transition: 0.25s; }
+    .back-btn:hover { opacity: 0.88; }
+    @media (max-width: 880px) {
+      .layout-wrapper { flex-direction: column; align-items: center; }
+      .detail-column { max-width: 580px; position: static; }
+    }
+    @media (max-width: 540px) {
+      .hero-image img { height: 220px; }
+      .first-time-badge { font-size: 0.76rem; padding: 4px 16px; }
+      .first-time-info h2 { font-size: 1.2rem; }
+      .price-tag { font-size: 1.75rem; }
+      .course-section { flex-direction: column; align-items: stretch; gap: 12px; padding: 20px; }
+      .course-title { text-align: left; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hero-image">
+    <img src="IMG_4217.JPG" alt="つなぐ鍼灸トキハナ 施術イメージ">
+  </div>
+
+  <main class="container">
+    <div class="page-title">
+      <span class="en">PRICE LIST</span>
+      <div class="ja-wrap">
+        <span class="ja-line"></span>
+        <h1 class="ja">料金早見表</h1>
+        <span class="ja-line"></span>
+      </div>
+    </div>
+
+    <div class="layout-wrapper" id="layout-wrapper">
+      
+      <div class="price-column">
+        <section class="first-time-box selectable-menu" data-target="detail-first">
+          <span class="first-time-badge">初めての方・どれか分からない方はこちら</span>
+          <div class="first-time-content">
+            <div class="first-time-info">
+              <h2>鍼灸 ＋ もみほぐし</h2>
+              <p class="time">施術時間：60分</p>
+            </div>
+            <div class="price-tag">8,500<span>円</span></div>
+          </div>
+          <p class="first-time-note">※初めての方は、丁寧なカウンセリングのため「問診 ＋20分」のお時間をいただいております。</p>
+        </section>
+
+        <section class="course-section">
+          <div class="course-title">60分コース</div>
+          <ul class="menu-list">
+            <li class="menu-item selectable-menu" data-target="detail-60-acu">
+              <span class="menu-name">鍼灸 ＋ もみほぐし</span>
+              <span class="menu-line"></span>
+              <span class="menu-price">8,500<span>円</span></span>
+            </li>
+            <li class="menu-item selectable-menu" data-target="detail-60-momi">
+              <span class="menu-name">もみほぐしのみ</span>
+              <span class="menu-line"></span>
+              <span class="menu-price">8,500<span>円</span></span>
+            </li>
+            <li class="menu-item selectable-menu" data-target="detail-60-hair">
+              <span class="menu-name">育毛鍼</span>
+              <span class="menu-line"></span>
+              <span class="menu-price">9,500<span>円</span></span>
+            </li>
+          </ul>
+        </section>
+
+        <section class="course-section">
+          <div class="course-title">90分コース</div>
+          <ul class="menu-list">
+            <li class="menu-item selectable-menu" data-target="detail-90-acu">
+              <span class="menu-name">鍼灸 ＋ もみほぐし</span>
+              <span class="menu-line"></span>
+              <span class="menu-price">11,500<span>円</span></span>
+            </li>
+          </ul>
+        </section>
+
+        <p class="click-guide">※各コースをクリックすると右横に施術の詳細が表示されます</p>
+      </div>
+
+      <div class="detail-column" id="detail-column">
+        <div class="detail-card" id="detail-first">
+          <button class="close-btn" onclick="closeDetail()">× 閉じる</button>
+          <span class="detail-tag">初回おすすめコース</span>
+          <h3>鍼灸 ＋ もみほぐし（初回）</h3>
+          <div class="detail-sub">8,500円 / 60分（＋問診20分）</div>
+          <p class="detail-desc">初めてご来院いただく方のための安心コースです。約20分の丁寧な問診に加え、手首の脈やお腹を通してお身体の状態を確認し、必要なツボに鍼やお灸で整え、ほぐしていきます。</p>
+          <div class="detail-recommend">
+            <strong>こんな方におすすめ</strong>
+            初めて鍼灸を受ける方、どのコースを選べばいいか迷われている方、しっかり話を聞いてほしい方
+          </div>
+        </div>
+
+        <div class="detail-card" id="detail-60-acu">
