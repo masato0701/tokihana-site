@@ -67,48 +67,53 @@
   border-top: 1px solid #e2ddd3;
 }
 .contact-area {
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
-  gap: 14px;
-}
-.contact-area .btn {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 76px;
-  padding: 14px 10px;
-  border-radius: 12px;
-  text-decoration: none;
-  font-weight: 700;
-  text-align: center;
-  line-height: 1.4;
-}
-.contact-area .btn-tel {
-  background: #ffffff;
-  color: #4f5d4e;
-  border: 2px solid #4f5d4e;
-}
-.contact-area .btn-tel .small {
-  font-size: 0.78rem;
-  font-weight: 500;
-}
-.contact-area .btn-tel .large {
-  font-size: 1.15rem;
-  white-space: nowrap;
-}
-.contact-area .btn-line {
-  background: #06c755;
-  color: #ffffff;
-  font-size: 0.96rem;
-}
-.contact-area .btn-hpb {
-  background: #e64565;
-  color: #ffffff;
-  font-size: 0.88rem;
-}
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 35px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 265px;
+      min-height: 68px;
+      padding: 12px 18px;
+      border-radius: 50px;
+      color: #ffffff;
+      font-weight: bold;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: opacity 0.2s, transform 0.2s;
+    }
+    .btn:hover {
+      opacity: 0.88;
+      transform: translateY(-2px);
+    }
+    .btn-tel {
+      background-color: #5b7869;
+    }
+    .btn-tel span.small {
+      font-size: 0.78rem;
+      font-weight: normal;
+      line-height: 1.2;
+    }
+    .btn-tel span.large {
+      font-size: 1.2rem;
+      letter-spacing: 0.04em;
+      margin-top: 2px;
+    }
+    .btn-line {
+      background-color: #06c755;
+      font-size: 1rem;
+    }
+    .btn-hpb {
+      background-color: #d94b70;
+      font-size: 0.92rem;
+      line-height: 1.35;
+    }
 
 /* スマホなど狭い画面では縦並びにする場合 */
 @media (max-width: 640px) {
