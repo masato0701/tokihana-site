@@ -59,30 +59,33 @@
     .back-btn { display: inline-block; padding: 13px 54px; background: var(--main); color: #fff; text-decoration: none; border-radius: 30px; font-size: 0.95rem; font-weight: 500; letter-spacing: 0.08em; box-shadow: 0 4px 12px rgba(79,93,78,0.25); transition: 0.25s; }
     .back-btn:hover { opacity: 0.88; }
 
-    /* お問い合わせ・予約ボタンエリア */
    /* お問い合わせ・予約ボタン（横並び） */
-#area-page02 {
-  margin-top: 42px;
-  padding-top: 32px;
-  border-top: 1px solid #e2ddd3;
-}
-.contact-area {
+ /* お問い合わせ・予約ボタン（常に1列横並び） */
+    #area-page02 {
+      margin-top: 42px;
+      padding-top: 32px;
+      border-top: 1px solid #e2ddd3;
+    }
+    .contact-area {
       display: flex;
       justify-content: center;
-      gap: 16px;
-      margin-top: 35px;
-      flex-wrap: wrap;
+      align-items: stretch;
+      gap: 12px;
+      flex-wrap: nowrap;
     }
     .btn {
+      flex: 1;
+      max-width: 265px;
+      min-width: 0;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      width: 265px;
       min-height: 68px;
-      padding: 12px 18px;
+      padding: 12px 10px;
       border-radius: 50px;
       color: #ffffff;
+      text-decoration: none;
       font-weight: bold;
       text-align: center;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
