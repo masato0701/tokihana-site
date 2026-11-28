@@ -3,151 +3,376 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>メニュー・料金｜つなぐ鍼灸 トキハナ（茨城県潮来市）</title>
-  <meta name="description" content="つなぐ鍼灸 トキハナの施術メニュー・料金一覧です。初めての方におすすめの鍼灸＋もみほぐし（60分・90分）や育毛鍼など、お悩みに合わせたコースをご案内します。">
-  <link rel="preconnect" href="https://googleapis.com">
-  <link rel="preconnect" href="https://gstatic.com" crossorigin>
-  <link href="https://googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Noto+Serif+JP:wght@500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+  <title>アクセス・店舗情報 | つなぐ鍼灸 トキハナ</title>
   <style>
-    :root { --bg: #f4f1ea; --card: #ffffff; --main: #4f5d4e; --accent: #a68b67; --text: #2f2d2a; --sub: #6e6a63; --border: #e2ddd3; --hover: #faf8f4; }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Zen Kaku Gothic New', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; letter-spacing: 0.04em; }
-
-    /* ヘッダーナビゲーション */
-    .site-header { background: var(--card); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
-    .header-inner { max-width: 1060px; margin: 0 auto; padding: 14px 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
-    .site-logo { font-family: 'Noto Serif JP', serif; font-size: 1.25rem; font-weight: 600; color: var(--main); text-decoration: none; letter-spacing: 0.08em; }
-    .site-nav ul { list-style: none; display: flex; flex-wrap: wrap; gap: 22px; }
-    .site-nav a { text-decoration: none; color: var(--text); font-size: 0.92rem; font-weight: 500; padding-bottom: 4px; transition: 0.2s; }
-    .site-nav a:hover, .site-nav a.current { color: var(--accent); border-bottom: 2px solid var(--accent); }
-
-    /* 上部画像・タイトル */
-    .hero-image { width: 100%; max-height: 360px; overflow: hidden; background: #e5dfd5; }
-    .hero-image img { width: 100%; height: 360px; object-fit: cover; display: block; }
-    .container { max-width: 1060px; margin: 0 auto; padding: 55px 20px 80px; }
-    .page-title { text-align: center; margin-bottom: 42px; }
-    .page-title .en { display: block; font-family: 'Cormorant Garamond', serif; font-size: 2.7rem; font-weight: 600; color: var(--main); letter-spacing: 0.14em; line-height: 1.1; }
-    .page-title .ja-wrap { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 8px; }
-    .page-title .ja-line { width: 48px; height: 1px; background: #c9bfb0; position: relative; }
-    .page-title .ja-line::after { content: ""; display: block; width: 100%; height: 1px; background: #dcd5c9; margin-top: 2px; }
-    .page-title .ja { font-family: 'Noto Serif JP', serif; font-size: 1.15rem; font-weight: 500; color: var(--main); }
-
-    /* 料金表レイアウト */
-    .layout-wrapper { display: flex; justify-content: center; align-items: flex-start; gap: 32px; }
-    .price-column { width: 100%; max-width: 580px; }
-    .first-time-box { background: var(--card); border: 2px solid var(--accent); border-radius: 14px; padding: 26px 28px 20px; margin-bottom: 24px; position: relative; box-shadow: 0 6px 20px rgba(0,0,0,0.04); cursor: pointer; transition: 0.2s; }
-    .first-time-box:hover, .first-time-box.active { background: var(--hover); }
-    .first-time-badge { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--accent); color: #fff; font-size: 0.85rem; font-weight: 500; padding: 4px 22px; border-radius: 20px; white-space: nowrap; }
-    .first-time-content { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
-    .first-time-info h2 { font-size: 1.45rem; font-weight: 700; margin-bottom: 2px; }
-    .first-time-info .time { font-size: 0.92rem; font-weight: 500; }
-    .price-tag { font-size: 2.15rem; font-weight: 700; color: var(--accent); white-space: nowrap; line-height: 1; }
-    .price-tag span { font-size: 1.05rem; font-weight: 500; margin-left: 2px; }
-    .first-time-note { font-size: clamp(0.65rem, 1.3vw, 0.78rem); margin-top: 12px; padding-top: 10px; border-top: 1px solid #eeeae2; text-align: center; white-space: nowrap; letter-spacing: 0.01em; }
-    .course-section { background: var(--card); border-radius: 14px; padding: 22px 28px; margin-bottom: 18px; box-shadow: 0 6px 20px rgba(0,0,0,0.04); display: flex; align-items: center; gap: 24px; }
-    .course-title { font-size: 1.25rem; font-weight: 700; white-space: nowrap; min-width: 115px; text-align: center; }
-    .menu-list { list-style: none; flex: 1; }
-    .menu-item { display: flex; align-items: center; padding: 7px 10px; margin: 2px 0; border-radius: 8px; cursor: pointer; transition: 0.2s; border: 1px solid transparent; }
-    .menu-item:hover, .menu-item.active { background: var(--hover); border-color: var(--accent); }
-    .menu-name { font-size: 1.02rem; font-weight: 500; white-space: nowrap; }
-    .menu-line { flex: 1; height: 1px; background: #b8b2a6; margin: 0 14px; }
-    .menu-price { font-size: 1.08rem; font-weight: 700; white-space: nowrap; }
-    .menu-price span { font-size: 0.9rem; font-weight: 500; margin-left: 1px; }
-    .click-guide { text-align: center; font-size: 0.82rem; color: var(--sub); margin-top: 6px; }
-
-    /* 右側詳細パネル */
-    .detail-column { display: none; width: 100%; max-width: 420px; position: sticky; top: 82px; }
-    .detail-column.is-open { display: block; }
-    .detail-card { display: none; background: var(--card); border-radius: 14px; padding: 28px 26px; box-shadow: 0 8px 26px rgba(0,0,0,0.06); border: 1px solid var(--border); position: relative; }
-    .detail-card.is-active { display: block; }
-    .close-btn { position: absolute; top: 16px; right: 18px; background: none; border: none; font-size: 0.85rem; color: var(--sub); cursor: pointer; padding: 4px 8px; border-radius: 6px; }
-    .close-btn:hover { background: var(--bg); color: var(--text); }
-    .detail-tag { display: inline-block; background: var(--main); color: #fff; font-size: 0.76rem; padding: 3px 12px; border-radius: 12px; margin-bottom: 10px; }
-    .detail-card h3 { font-family: 'Noto Serif JP', serif; font-size: 1.28rem; margin-bottom: 4px; }
-    .detail-sub { font-size: 0.95rem; font-weight: 700; color: var(--accent); padding-bottom: 14px; margin-bottom: 16px; border-bottom: 1px solid var(--border); }
-    .detail-desc { font-size: 0.95rem; line-height: 1.85; }
-    .detail-recommend { margin-top: 18px; padding: 14px 16px; background: var(--bg); border-radius: 10px; font-size: 0.86rem; color: var(--sub); line-height: 1.75; }
-    .detail-recommend strong { display: block; color: var(--main); margin-bottom: 4px; }
-    .back-nav { text-align: center; margin-top: 38px; }
-    .back-btn { display: inline-block; padding: 13px 54px; background: var(--main); color: #fff; text-decoration: none; border-radius: 30px; font-size: 0.95rem; font-weight: 500; letter-spacing: 0.08em; box-shadow: 0 4px 12px rgba(79,93,78,0.25); transition: 0.25s; }
-    .back-btn:hover { opacity: 0.88; }
-
-    @media (max-width: 880px) {
-      .layout-wrapper { flex-direction: column; align-items: center; }
-      .detail-column { max-width: 580px; position: static; }
+    /* ベーススタイル */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
-    @media (max-width: 640px) {
-      .header-inner { justify-content: center; }
-      .site-nav ul { justify-content: center; gap: 14px; }
-      .site-nav a { font-size: 0.84rem; }
+    body {
+      font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+      background-color: #f4f5f4;
+      color: #333333;
+      line-height: 1.7;
     }
-    @media (max-width: 540px) {
-      .hero-image img { height: 220px; }
-      .first-time-badge { font-size: 0.76rem; padding: 4px 16px; }
-      .first-time-info h2 { font-size: 1.2rem; }
-      .price-tag { font-size: 1.75rem; }
-      .first-time-note { font-size: 0.62rem; letter-spacing: 0; }
-      .course-section { flex-direction: column; align-items: stretch; gap: 12px; padding: 20px; }
-      .course-title { text-align: left; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ヘッダー */
+    header {
+      background-color: #ffffff;
+      border-bottom: 1px solid #e0e0e0;
+      padding: 15px 20px;
+    }
+    .header-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .logo {
+      font-size: 1.25rem;
+      font-weight: bold;
+      color: #2c3e35;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      font-size: 0.95rem;
+    }
+    nav a:hover {
+      color: #4f7963;
+    }
+
+    /* ページタイトルバナー */
+    .page-banner {
+      background-color: #4f7963;
+      color: #ffffff;
+      text-align: center;
+      padding: 35px 20px;
+    }
+    .page-banner h1 {
+      font-size: 1.75rem;
+      letter-spacing: 0.05em;
+      margin-bottom: 5px;
+    }
+    .page-banner p {
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      opacity: 0.9;
+    }
+
+    /* メインコンテンツ */
+    main {
+      max-width: 880px;
+      margin: 30px auto 60px;
+      padding: 0 20px;
+    }
+
+    /* カード型セクション */
+    .card {
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      padding: 30px;
+      margin-bottom: 25px;
+    }
+    .card h2 {
+      font-size: 1.2rem;
+      color: #2c3e35;
+      border-bottom: 2px solid #e8ecea;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+
+    /* 店舗基本情報テーブル */
+    .info-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .info-table th,
+    .info-table td {
+      padding: 14px 10px;
+      border-bottom: 1px solid #eeeeee;
+      text-align: left;
+      vertical-align: top;
+      font-size: 0.95rem;
+    }
+    .info-table th {
+      width: 24%;
+      font-weight: bold;
+      color: #444444;
+    }
+    .info-table tr:last-child th,
+    .info-table tr:last-child td {
+      border-bottom: none;
+    }
+    .note {
+      display: block;
+      font-size: 0.84rem;
+      color: #666666;
+      margin-top: 4px;
+    }
+    .tel-link {
+      color: #4f7963;
+      text-decoration: underline;
+      font-weight: bold;
+    }
+
+    /* 交通アクセス */
+    .access-grid {
+      display: flex;
+      gap: 25px;
+      align-items: flex-start;
+    }
+    .access-details {
+      flex: 1;
+    }
+    .access-badge {
+      display: inline-block;
+      background-color: #c88a4b;
+      color: #ffffff;
+      font-size: 0.85rem;
+      font-weight: bold;
+      padding: 4px 12px;
+      border-radius: 4px;
+      margin-bottom: 12px;
+    }
+    .access-list {
+      list-style: none;
+      margin-bottom: 14px;
+      font-size: 0.94rem;
+    }
+    .access-list li {
+      position: relative;
+      padding-left: 1em;
+      margin-bottom: 8px;
+    }
+    .access-list li::before {
+      content: "・";
+      position: absolute;
+      left: 0;
+      color: #4f7963;
+      font-weight: bold;
+    }
+    .landmark-box {
+      background-color: #f7f9f8;
+      border-left: 3px solid #4f7963;
+      padding: 12px 15px;
+      font-size: 0.9rem;
+      color: #333333;
+      border-radius: 0 4px 4px 0;
+    }
+
+    /* Googleマップ */
+    .ggmap02 {
+      width: 340px;
+      height: 250px;
+      background-color: #e9ecef;
+      border-radius: 6px;
+      overflow: hidden;
+      flex-shrink: 0;
+      border: 1px solid #dddddd;
+    }
+    .ggmap02 iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* CTAボタンエリア（3ボタン対応） */
+    .contact-area {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 35px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 265px;
+      min-height: 68px;
+      padding: 12px 18px;
+      border-radius: 50px;
+      color: #ffffff;
+      font-weight: bold;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: opacity 0.2s, transform 0.2s;
+    }
+    .btn:hover {
+      opacity: 0.88;
+      transform: translateY(-2px);
+    }
+    .btn-tel {
+      background-color: #5b7869;
+    }
+    .btn-tel span.small {
+      font-size: 0.78rem;
+      font-weight: normal;
+      line-height: 1.2;
+    }
+    .btn-tel span.large {
+      font-size: 1.2rem;
+      letter-spacing: 0.04em;
+      margin-top: 2px;
+    }
+    .btn-line {
+      background-color: #06c755;
+      font-size: 1rem;
+    }
+    .btn-hpb {
+      background-color: #d94b70;
+      font-size: 0.92rem;
+      line-height: 1.35;
+    }
+
+    /* スマホ対応 */
+    @media (max-width: 768px) {
+      .access-grid {
+        flex-direction: column;
+      }
+      .ggmap02 {
+        width: 100%;
+        height: 260px;
+      }
+      .info-table th {
+        width: 30%;
+      }
+      .btn {
+        width: 100%;
+        max-width: 340px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- 全ページ共通ヘッダー -->
-  <header class="site-header">
+  <!-- ヘッダー -->
+  <header>
     <div class="header-inner">
-      <a href="index.html" class="site-logo">つなぐ鍼灸 トキハナ</a>
-      <nav class="site-nav">
+      <!-- ロゴ（あとでトップページのURLに変更可能） -->
+      <a href="javascript:void(0);" class="logo">つなぐ鍼灸 トキハナ</a>
+      <nav>
         <ul>
-          <li><a href="index.html">ホーム</a></li>
-          <li><a href="menu.html" class="current">メニュー・料金</a></li>
-          <li><a href="access.html">アクセス</a></li>
-          <li><a href="blog.html">ブログ</a></li>
-          <li><a href="voice.html">お客様の声</a></li>
+          <!-- ▼ 準備ができたら「javascript:void(0);」を実際のURLやファイル名に書き換えてください -->
+          <li><a href="javascript:void(0);">ホーム</a></li>
+          <li><a href="javascript:void(0);">初めての方へ</a></li>
+          <li><a href="javascript:void(0);">メニュー・料金</a></li>
+          <li><a href="access.html" style="color: #4f7963; font-weight: bold;">アクセス</a></li>
+          <li><a href="blog.html">ブログ・お知らせ</a></li>
+          <li><a href="voice.html">お客様の声</a></li>                                  
         </ul>
       </nav>
     </div>
   </header>
 
-  <div class="hero-image">
-    <img src="IMG_4217.JPG" alt="つなぐ鍼灸トキハナ 施術イメージ">
+  <!-- バナー -->
+  <div class="page-banner">
+    <h1>アクセス・店舗情報</h1>
+    <p>ACCESS &amp; INFORMATION</p>
   </div>
 
-  <main class="container">
-    <div class="page-title">
-      <span class="en">PRICE LIST</span>
-      <div class="ja-wrap">
-        <span class="ja-line"></span>
-        <h1 class="ja">料金早見表</h1>
-        <span class="ja-line"></span>
+  <!-- メインコンテンツ -->
+  <main>
+    <!-- 店舗基本情報 -->
+    <section class="card">
+      <h2>店舗基本情報</h2>
+      <table class="info-table">
+        <tr>
+          <th>店舗名</th>
+          <td>
+            つなぐ鍼灸　トキハナ
+            <span class="note">＊「幸せ鍼灸　まさと院」より院名を変更しました。</span>
+          </td>
+        </tr>
+        <tr>
+          <th>住所</th>
+          <td>茨城県潮来市日の出8丁目14－2 プロスパリティ102</td>
+        </tr>
+        <tr>
+          <th>電話番号</th>
+          <td><a href="tel:08034121443" class="tel-link">080-3412-1443</a></td>
+        </tr>
+        <tr>
+          <th>営業時間</th>
+          <td>9:00～22:00（最終受付 20:30）</td>
+        </tr>
+        <tr>
+          <th>定休日</th>
+          <td>火曜日＋不定休</td>
+        </tr>
+        <tr>
+          <th>駐車場</th>
+          <td>あり。2台利用可。（院の入り口前。大通りから数えて６番目と７番目がご利用できます）</td>
+        </tr>
+      </table>
+    </section>
+
+    <!-- 交通アクセス -->
+    <section class="card">
+      <h2>交通アクセス</h2>
+      <div class="access-grid">
+        <div class="access-details">
+          <span class="access-badge">お車で来院される場合</span>
+          <ul class="access-list">
+            <li>東関東自動車道「潮来IC」から潮来駅方面に向かった場合 <strong>約7分</strong></li>
+            <li>JR鹿島線「潮来駅」から潮来IC方面に向かった場合 <strong>約5分</strong></li>
+          </ul>
+          <div class="landmark-box">
+            日の出保育園近くの交差点にある、<strong>4階建てで外壁が白のマンション1階</strong>になります。
+          </div>
+        </div>
+
+                       <!-- Googleマップ -->
+        <div class="ggmap02" id="tokihana-map"></div>
+        <script>
+          (function() {
+            var p1 = "https:" + "//maps.";
+            var p2 = "google.com" + "/maps";
+            var params = "?q=35.9340972,140.5653619&hl=ja&z=17&output=embed";
+            var iframe = document.createElement("iframe");
+            iframe.src = p1 + p2 + params;
+            iframe.width = "600";
+            iframe.height = "450";
+            iframe.style.border = "0";
+            iframe.allowFullscreen = true;
+            iframe.loading = "lazy";
+            document.getElementById("tokihana-map").appendChild(iframe);
+          })();
+        </script>
+      </div>
+    </section>
+
+
+
+    <!-- お問い合わせ・予約ボタン -->
+    <div id="area-page02">
+      <div class="contact-area">
+        <a href="tel:08034121443" class="btn btn-tel">
+          <span class="small">電話をかける</span>
+          <span class="large">080ｰ3412ｰ1443</span>
+        </a>
+        <a href="https://lin.ee/ZIXzKbU" target="_blank" rel="noopener noreferrer" class="btn btn-line">
+  LINEで予約する
+        </a>
+        <a href="https://beauty.hotpepper.jp/kr/slnH000783914/" target="_blank" rel="noopener noreferrer" class="btn btn-hpb">
+  ホットペッパービューティーで<br>予約する
+</a>
       </div>
     </div>
+  </main>
 
-    <div class="layout-wrapper">
-      <!-- 左側：料金早見表 -->
-      <div class="price-column">
-        <section class="first-time-box selectable-menu" data-target="detail-first">
-          <span class="first-time-badge">初めての方・どれか分からない方はこちら</span>
-          <div class="first-time-content">
-            <div class="first-time-info">
-              <h2>鍼灸 ＋ もみほぐし</h2>
-              <p class="time">施術時間：60分</p>
-            </div>
-            <div class="price-tag">8,500<span>円</span></div>
-          </div>
-          <p class="first-time-note">※初めての方は、丁寧なカウンセリングのため「問診 ＋20分」のお時間をいただいております。</p>
-        </section>
-
-        <section class="course-section">
-          <div class="course-title">60分コース</div>
-          <ul class="menu-list">
-            <li class="menu-item selectable-menu" data-target="detail-60-acu">
-              <span class="menu-name">鍼灸 ＋ もみほぐし</span>
-              <span class="menu-line"></span>
-              <span class="menu-price">8,500<span>円</span></span>
-            </li>
-            <li class="menu-item selectable-menu" data-target="detail-60-momi">
-              <span class="menu-name">もみほぐしのみ</span>
-              <span class="menu-line"></span>
-              <span class="menu-price">8,500<span>円</span></span>
+</body>
+</html>
