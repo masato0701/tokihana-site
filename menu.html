@@ -60,16 +60,62 @@
     .back-btn:hover { opacity: 0.88; }
 
     /* お問い合わせ・予約ボタンエリア */
-    #area-page02 { margin-top: 42px; padding-top: 32px; border-top: 1px solid var(--border); }
-    .contact-area { display: flex; flex-direction: column; gap: 14px; max-width: 420px; margin: 0 auto; }
-    .btn { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 14px 20px; border-radius: 12px; text-decoration: none; font-weight: 700; text-align: center; line-height: 1.45; box-shadow: 0 4px 12px rgba(0,0,0,0.08); transition: 0.25s; }
-    .btn:hover { opacity: 0.88; transform: translateY(-1px); }
-    .btn-tel { background: var(--card); color: var(--main); border: 2px solid var(--main); }
-    .btn-tel .small { font-size: 0.8rem; font-weight: 500; }
-    .btn-tel .large { font-size: 1.35rem; letter-spacing: 0.05em; }
-    .btn-line { background: #06c755; color: #fff; font-size: 1rem; padding: 16px 20px; }
-    .btn-hpb { background: #e64565; color: #fff; font-size: 0.96rem; }
+   /* お問い合わせ・予約ボタン（横並び） */
+#area-page02 {
+  margin-top: 42px;
+  padding-top: 32px;
+  border-top: 1px solid #e2ddd3;
+}
+.contact-area {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 14px;
+}
+.contact-area .btn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 76px;
+  padding: 14px 10px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.4;
+}
+.contact-area .btn-tel {
+  background: #ffffff;
+  color: #4f5d4e;
+  border: 2px solid #4f5d4e;
+}
+.contact-area .btn-tel .small {
+  font-size: 0.78rem;
+  font-weight: 500;
+}
+.contact-area .btn-tel .large {
+  font-size: 1.15rem;
+  white-space: nowrap;
+}
+.contact-area .btn-line {
+  background: #06c755;
+  color: #ffffff;
+  font-size: 0.96rem;
+}
+.contact-area .btn-hpb {
+  background: #e64565;
+  color: #ffffff;
+  font-size: 0.88rem;
+}
 
+/* スマホなど狭い画面では縦並びにする場合 */
+@media (max-width: 640px) {
+  .contact-area {
+    flex-direction: column;
+  }
+}
     @media (max-width: 640px) {
       .header-inner { justify-content: center; }
       .site-nav ul { justify-content: center; gap: 14px; }
