@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -32,25 +31,23 @@
     .first-time-info .time { font-size: 0.92rem; font-weight: 500; }
     .price-tag { font-size: 2.15rem; font-weight: 700; color: var(--accent); white-space: nowrap; line-height: 1; }
     .price-tag span { font-size: 1.05rem; font-weight: 500; margin-left: 2px; }
-    .first-time-note {font-size: 0.62rem;letter-spacing: 0;}
+    .first-time-note { font-size: clamp(0.65rem, 1.3vw, 0.78rem); margin-top: 12px; padding-top: 10px; border-top: 1px solid #eeeae2; text-align: center; white-space: nowrap; letter-spacing: 0.01em; }
     .course-section { background: var(--card); border-radius: 14px; padding: 22px 28px; margin-bottom: 18px; box-shadow: 0 6px 20px rgba(0,0,0,0.04); display: flex; align-items: center; gap: 24px; }
     .course-title { font-size: 1.25rem; font-weight: 700; white-space: nowrap; min-width: 115px; text-align: center; }
     .menu-list { list-style: none; flex: 1; }
     .menu-item { display: flex; align-items: center; padding: 7px 10px; margin: 2px 0; border-radius: 8px; cursor: pointer; transition: 0.2s; border: 1px solid transparent; }
-    .menu-item:hover { background: var(--hover); }
-    .menu-item.active { background: var(--hover); border-color: var(--accent); }
+    .menu-item:hover, .menu-item.active { background: var(--hover); border-color: var(--accent); }
     .menu-name { font-size: 1.02rem; font-weight: 500; white-space: nowrap; }
     .menu-line { flex: 1; height: 1px; background: #b8b2a6; margin: 0 14px; }
     .menu-price { font-size: 1.08rem; font-weight: 700; white-space: nowrap; }
     .menu-price span { font-size: 0.9rem; font-weight: 500; margin-left: 1px; }
     .click-guide { text-align: center; font-size: 0.82rem; color: var(--sub); margin-top: 6px; }
     .detail-column { display: none; width: 100%; max-width: 420px; position: sticky; top: 24px; }
-    .layout-wrapper.has-detail .detail-column { display: block; animation: slideIn 0.3s ease; }
+    .layout-wrapper.has-detail .detail-column { display: block; animation: slideIn 0.25s ease; }
     @keyframes slideIn { from { opacity: 0; transform: translateX(12px); } to { opacity: 1; transform: translateX(0); } }
     .detail-card { display: none; background: var(--card); border-radius: 14px; padding: 28px 26px; box-shadow: 0 8px 26px rgba(0,0,0,0.06); border: 1px solid var(--border); position: relative; }
     .detail-card.active { display: block; }
-    .close-btn { position: absolute; top: 16px; right: 18px; background: none; border: none; font-size: 0.85rem; color: var(--sub); cursor: pointer; padding: 4px 8px; border-radius: 6px; }
-    .close-btn:hover { background: var(--bg); color: var(--text); }
+    .close-btn { display: none; position: absolute; top: 16px; right: 18px; background: none; border: none; font-size: 0.85rem; color: var(--sub); cursor: pointer; padding: 4px 8px; border-radius: 6px; }
     .detail-tag { display: inline-block; background: var(--main); color: #fff; font-size: 0.76rem; padding: 3px 12px; border-radius: 12px; margin-bottom: 10px; }
     .detail-card h3 { font-family: 'Noto Serif JP', serif; font-size: 1.28rem; margin-bottom: 4px; }
     .detail-sub { font-size: 0.95rem; font-weight: 700; color: var(--accent); padding-bottom: 14px; margin-bottom: 16px; border-bottom: 1px solid var(--border); }
@@ -63,12 +60,14 @@
     @media (max-width: 880px) {
       .layout-wrapper { flex-direction: column; align-items: center; }
       .detail-column { max-width: 580px; position: static; }
+      .close-btn { display: block; }
     }
     @media (max-width: 540px) {
       .hero-image img { height: 220px; }
       .first-time-badge { font-size: 0.76rem; padding: 4px 16px; }
       .first-time-info h2 { font-size: 1.2rem; }
       .price-tag { font-size: 1.75rem; }
+      .first-time-note { font-size: 0.62rem; letter-spacing: 0; }
       .course-section { flex-direction: column; align-items: stretch; gap: 12px; padding: 20px; }
       .course-title { text-align: left; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
     }
@@ -91,7 +90,6 @@
     </div>
 
     <div class="layout-wrapper" id="layout-wrapper">
-      
       <div class="price-column">
         <section class="first-time-box selectable-menu" data-target="detail-first">
           <span class="first-time-badge">初めての方・どれか分からない方はこちら</span>
@@ -137,10 +135,12 @@
           </ul>
         </section>
 
-        <p class="click-guide">※各コースをクリックすると右横に施術の詳細が表示されます</p>
+        <p class="click-guide">※各コースにカーソルを合わせる（スマホはタップする）と右横に施術の詳細が表示されます</p>
       </div>
 
+      <!-- ★★★ 各コースの説明文（自由に書き換えられます） ★★★ -->
       <div class="detail-column" id="detail-column">
+
         <div class="detail-card" id="detail-first">
           <button class="close-btn" onclick="closeDetail()">× 閉じる</button>
           <span class="detail-tag">初回おすすめコース</span>
@@ -149,8 +149,3 @@
           <p class="detail-desc">初めてご来院いただく方のための安心コースです。約20分の丁寧な問診に加え、手首の脈やお腹を通してお身体の状態を確認し、必要なツボに鍼やお灸で整え、ほぐしていきます。</p>
           <div class="detail-recommend">
             <strong>こんな方におすすめ</strong>
-            初めて鍼灸を受ける方、どのコースを選べばいいか迷われている方、しっかり話を聞いてほしい方
-          </div>
-        </div>
-
-        <div class="detail-card" id="detail-60-acu">
