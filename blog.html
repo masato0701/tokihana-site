@@ -5,56 +5,84 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ブログ・お知らせ | つなぐ鍼灸 トキハナ</title>
   <meta name="description" content="つなぐ鍼灸 トキハナのブログ・お知らせ一覧です。季節ごとの体調管理や東洋医学のセルフケア、院の最新情報などを発信しています。">
-  
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://gstatic.com" crossorigin>
   <link href="https://googleapis.com" rel="stylesheet">
-  
+
   <style>
-    /* ベーススタイル（access.htmlと統一） */
+    :root {
+      --bg: #f4f1ea;
+      --card: #ffffff;
+      --main: #4f5d4e;
+      --accent: #a68b67;
+      --text: #2f2d2a;
+      --sub: #6e6a63;
+      --border: #e2ddd3;
+    }
+
+    /* ベーススタイル */
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
     body {
-      font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+      font-family: 'Zen Kaku Gothic New', sans-serif;
       background-color: #f4f5f4;
       color: #333333;
       line-height: 1.8;
+      letter-spacing: 0.04em;
     }
     a {
       text-decoration: none;
       color: inherit;
     }
 
-    /* ヘッダー */
-    header {
-      background-color: #ffffff;
-      border-bottom: 1px solid #e0e0e0;
-      padding: 15px 20px;
+    /* ヘッダーナビゲーション（メニューページと完全統一） */
+    .site-header {
+      background: var(--card);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
     .header-inner {
-      max-width: 1000px;
+      max-width: 1060px;
       margin: 0 auto;
+      padding: 14px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 12px;
     }
-    .logo {
+    .site-logo {
+      font-family: 'Noto Serif JP', serif;
       font-size: 1.25rem;
-      font-weight: bold;
-      color: #2c3e35;
+      font-weight: 600;
+      color: var(--main);
+      text-decoration: none;
+      letter-spacing: 0.08em;
     }
-    nav ul {
+    .site-nav ul {
       list-style: none;
       display: flex;
-      gap: 20px;
-      font-size: 0.95rem;
       flex-wrap: wrap;
+      gap: 22px;
     }
-    nav a:hover {
-      color: #4f7963;
+    .site-nav a {
+      text-decoration: none;
+      color: var(--text);
+      font-size: 0.92rem;
+      font-weight: 500;
+      padding-bottom: 4px;
+      transition: 0.2s;
+    }
+    .site-nav a:hover,
+    .site-nav a.current {
+      color: var(--accent);
+      border-bottom: 2px solid var(--accent);
     }
 
     /* ページタイトルバナー */
@@ -143,8 +171,7 @@
       margin-bottom: 0;
     }
 
-    /* CTAボタンエリア（access.htmlと統一） */
-       /* CTAボタンエリア（3つ横並び対応） */
+    /* CTAボタンエリア（3つ横並び対応） */
     .contact-area {
       display: flex;
       justify-content: space-between;
@@ -194,9 +221,7 @@
       line-height: 1.35;
     }
 
-
     /* スマホ対応 */
-       /* スマホ対応 */
     @media (max-width: 768px) {
       .blog-post {
         padding: 22px 18px;
@@ -214,23 +239,33 @@
         max-width: 340px;
       }
     }
-
+    @media (max-width: 640px) {
+      .header-inner {
+        justify-content: center;
+      }
+      .site-nav ul {
+        justify-content: center;
+        gap: 14px;
+      }
+      .site-nav a {
+        font-size: 0.84rem;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <!-- ヘッダー -->
-  <header style="background: #ffffff; border-bottom: 1px solid #e2ddd3; position: sticky; top: 0; z-index: 100;">
-    <div style="max-width: 1060px; margin: 0 auto; padding: 14px 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
-      <a href="index.html" style="font-family: 'Noto Serif JP', serif; font-size: 1.25rem; font-weight: 600; color: #4f5d4e; text-decoration: none; letter-spacing: 0.08em;">つなぐ鍼灸 トキハナ</a>
-      <nav>
-        <ul style="list-style: none; display: flex; flex-wrap: wrap; gap: 22px; margin: 0; padding: 0;">
-          <li><a href="index.html" style="text-decoration: none; color: #2f2d2a; font-size: 0.92rem; font-weight: 500; padding-bottom: 4px;">ホーム</a></li>
-          <li><a href="javascript:void(0);" style="text-decoration: none; color: #2f2d2a; font-size: 0.92rem; font-weight: 500; padding-bottom: 4px;">初めての方へ</a></li>
-          <li><a href="menu.html" style="text-decoration: none; color: #2f2d2a; font-size: 0.92rem; font-weight: 500; padding-bottom: 4px;">メニュー・料金</a></li>
-          <li><a href="access.html" style="text-decoration: none; color: #2f2d2a; font-size: 0.92rem; font-weight: 500; padding-bottom: 4px;">アクセス</a></li>
-          <li><a href="blog.html" style="text-decoration: none; color: #a68b67; font-size: 0.92rem; font-weight: 500; padding-bottom: 4px; border-bottom: 2px solid #a68b67;">ブログ・お知らせ</a></li>
-          <li><a href="voice.html" style="text-decoration: none; color: #2f2d2a; font-size: 0.92rem; font-weight: 500; padding-bottom: 4px;">お客様の声</a></li>
+  <!-- ヘッダー（メニューページと完全統一） -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="site-logo">つなぐ鍼灸 トキハナ</a>
+      <nav class="site-nav">
+        <ul>
+          <li><a href="index.html">ホーム</a></li>
+          <li><a href="menu.html">メニュー・料金</a></li>
+          <li><a href="access.html">アクセス</a></li>
+          <li><a href="blog.html" class="current">ブログ・お知らせ</a></li>
+          <li><a href="voice.html">お客様の声</a></li>
         </ul>
       </nav>
     </div>
